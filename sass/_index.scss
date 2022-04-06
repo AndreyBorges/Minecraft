@@ -10,7 +10,7 @@ main {
   background-repeat: repeat no-repeat;
   background-size: cover;
   animation: bg 110s infinite linear;
-  
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ main {
   background-size: cover;
   position: relative;
   position: absolute;
-  top:230px;
+  top: 230px;
   z-index: 1;
   &::after {
     position: absolute;
@@ -96,8 +96,10 @@ main {
       height: 40px;
       padding-bottom: 5px;
       background: rgb(110, 110, 110);
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 1), inset 2px 2px 0  rgba(175, 175, 175, 1),inset 0px -5px 0  rgba(85, 85, 85, 1);
-      &:hover{
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 1),
+        inset 2px 2px 0 rgba(175, 175, 175, 1),
+        inset 0px -5px 0 rgba(85, 85, 85, 1);
+      &:hover {
         background: rgb(166, 166, 255);
         color: rgba(255, 255, 0, 01);
       }
@@ -107,6 +109,118 @@ main {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .logo {
+    width: 400px;
+    height: 150px;
+    top: 30%;
+    &::after {
+      font-size: 16px;
+      right: -10px;
+      bottom: 45px;
+    }
+  }
+  .options {
+    width: 280px;
+    & li {
+      & button {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .cuboTot {
+    left: 43%;
+    top: 10%;
+    width: 120px;
+    height: 120px;
+    .cubo {
+      width: 120px;
+      height: 120px;
+    }
+    .cT {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/233/thumb/top.jpg?1497835487");
+      transform: translateY(-60px) rotateX(90deg);
+    }
+    .cB {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/231/full/bottom.jpg?1497835434");
+      transform: translateY(60px) rotateX(90deg);
+    }
+    .cL {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateX(-60px) rotateY(90deg);
+    }
+    .cR {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateX(60px) rotateY(90deg);
+    }
+    .cF {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateZ(60px);
+    }
+    .cBK {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateZ(-60px);
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .logo {
+    width: 350px;
+    height: 100px;
+    top: 35%;
+    &::after {
+      font-size: 12px;
+      right: 0px;
+      bottom: 30px;
+    }
+  }
+  .cuboTot {
+    left: 40%;
+    top: 10%;
+    width: 100px;
+    height: 100px;
+    .cubo {
+      width: 100px;
+      height: 100px;
+    }
+    .cT {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/233/thumb/top.jpg?1497835487");
+      transform: translateY(-50px) rotateX(90deg);
+    }
+    .cB {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/231/full/bottom.jpg?1497835434");
+      transform: translateY(50px) rotateX(90deg);
+    }
+    .cL {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateX(-50px) rotateY(90deg);
+    }
+    .cR {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateX(50px) rotateY(90deg);
+    }
+    .cF {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateZ(50px);
+    }
+    .cBK {
+      background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+      transform: translateZ(-50px);
+    }
+  }
+
+  .options {
+    width: 250px;
+    & li {
+      & button {
+        font-size: 12px;
+      }
     }
   }
 }
