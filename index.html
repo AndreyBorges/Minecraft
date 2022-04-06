@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>MineCraft</title>
+  </head>
+  <body>
+    <main>
+      <div class="cuboTot">
+        <div class="cubo cT"></div>
+        <div class="cubo cB"></div>
+        <div class="cubo cL"></div>
+        <div class="cubo cR"></div>
+        <div class="cubo cF"></div>
+        <div class="cubo cBK"></div>
+      </div>
+      <div class="logo"></div>
+      <ul class="options">
+        <li><button id="single">Singleplayer</button></li>
+        <li><button>Multiplayer</button></li>
+        <li><button>Credits</button></li>
+        <li><button>How to player</button></li>
+        <li><button>Play audio</button></li>
+        <li><button>Options</button> <button>Quit Game</button></li>
+      </ul>
+    </main>
+    <section id="singleSection">
+      <div class="boxSingle">
+        <div class="close"></div>
+        <div class="loading"><p>Loading...</p></div>
+        <div class="componetsGame">
+          <div class="generatingLoad">Generating level</div>
+          <div class="gStart">
+            <p>Game Generated!</p>
+            <p>You are the host. You can invite some(9) friends to join you.</p>
+            <div class="copy">
+              <input
+                type="text"
+                placeholder="/classic.minecraft.net/?join=xIlHfN-dQ46s"
+                readonly
+              />
+              <button>Copy</button>
+            </div>
+            <p>Pick a username and start the game</p>
+            <div class="start">
+              <input type="text" name="" />
+              <button>Start</button>
+            </div>
+            <p>Left click to place or mine blocks(right click to toggle).</p>
+            <ul class="propList">
+              <li><img src="./assets/Ancient.webp" alt="Ancient" /></li>
+              <li><img src="./assets/Block.webp" alt="Block" /></li>
+              <li><img src="./assets/Deepslate.webp" alt="Deepslate" /></li>
+              <li>
+                <img
+                  src="./assets/DeepslateCopper.webp"
+                  alt="DeepslateCopper"
+                />
+              </li>
+              <li><img src="./assets/DeepslateD.webp" alt="DeepslateD" /></li>
+              <li>
+                <img src="./assets/DeepslateIron.webp" alt="DeepslateIron" />
+              </li>
+              <li>
+                <img src="./assets/DeepslateRed.webp" alt="DeepslateRed" />
+              </li>
+              <li><img src="./assets/Diamond.webp" alt="Diamond" /></li>
+              <li><img src="./assets/Gold.webp" alt="Gold" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const single = document.getElementById("single");
+      const singleSection = document.getElementById("singleSection");
+      const closeS = document.querySelector(".close");
+      const main = document.querySelector("main");
+      const listItem = document.querySelectorAll(".propList li");
+
+      single.addEventListener("click", () => {
+        main.style.display = "none";
+        singleSection.style.display = "flex";
+      });
+      closeS.addEventListener("click", () => {
+        singleSection.style.display = "none";
+        main.style.display = "flex";
+      });
+
+      listItem.forEach((e) => {
+        e.addEventListener("click", ({ currentTarget }) => {
+          console.log({ e, currentTarget });
+          e.classList.add("actived");
+        });
+      });
+    </script>
+  </body>
+</html>

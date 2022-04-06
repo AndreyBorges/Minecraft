@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>MineCraft</title>
+  </head>
+  <body>
+    <main>
+      <div class="cuboTot">
+        <div class="cubo cT"></div>
+        <div class="cubo cB"></div>
+        <div class="cubo cL"></div>
+        <div class="cubo cR"></div>
+        <div class="cubo cF"></div>
+        <div class="cubo cBK"></div>
+      </div>
+      <div class="logo"></div>
+      <ul class="options">
+        <li><button id="single">Singleplayer</button></li>
+        <li><button>Multiplayer</button></li>
+        <li><button>Credits</button></li>
+        <li><button>How to player</button></li>
+        <li><button>Play audio</button></li>
+        <li><button>Options</button> <button>Quit Game</button></li>
+      </ul>
+    </main>
+    <section id="singleSection">
+      <div class="boxSingle">
+        <div class="close"></div>
+        <div class="loading"><p>Loading...</p></div>
+        <div class="componetsLoad">
+          <div class="generating">Generating level</div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const single = document.getElementById("single");
+      const singleSection = document.getElementById("singleSection");
+      const closeS = document.querySelector(".close");
+      const main = document.querySelector("main");
+
+      single.addEventListener("click", () => {
+        main.style.display = "none";
+        singleSection.style.display = "block";
+      });
+      closeS.addEventListener("click", () => {
+        singleSection.style.display = "none";
+        main.style.display = "flex";
+      });
+    </script>
+  </body>
+</html>

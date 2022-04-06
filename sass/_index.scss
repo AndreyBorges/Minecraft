@@ -1,0 +1,112 @@
+body {
+  background: #000;
+}
+main {
+  display: none;
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 960px;
+  background-image: url(../assets/minecraft-classic-browser-game.jpeg);
+  background-repeat: repeat no-repeat;
+  background-size: cover;
+  animation: bg 110s infinite linear;
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+
+.cuboTot {
+  left: 400px;
+  top: 50px;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  animation: cubo 10s infinite alternate-reverse;
+  .cubo {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+  }
+
+  .cT {
+    background-image: url("https://uploaddeimagens.com.br/images/000/955/233/thumb/top.jpg?1497835487");
+    transform: translateY(-75px) rotateX(90deg);
+  }
+  .cB {
+    background-image: url("https://uploaddeimagens.com.br/images/000/955/231/full/bottom.jpg?1497835434");
+    transform: translateY(75px) rotateX(90deg);
+  }
+  .cL {
+    background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+    transform: translateX(-75px) rotateY(90deg);
+  }
+  .cR {
+    background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+    transform: translateX(75px) rotateY(90deg);
+  }
+  .cF {
+    background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+    transform: translateZ(75px);
+  }
+  .cBK {
+    background-image: url("https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464");
+    transform: translateZ(-75px);
+  }
+}
+
+.logo {
+  width: 500px;
+  height: 150px;
+  background-image: url(../assets/Minecraft-Logo-PNG.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  position: absolute;
+  top:230px;
+  z-index: 1;
+  &::after {
+    position: absolute;
+    content: "Bees! bees! bees!";
+    font-size: 18px;
+    color: yellow;
+    bottom: 40px;
+    right: 10px;
+    animation: sublogo 0.8s infinite;
+  }
+}
+
+.options {
+  display: flex;
+  gap: 15px;
+  width: 300px;
+  flex-direction: column;
+  & li {
+    display: grid;
+    & button {
+      display: flex;
+      align-items: center;
+      color: white;
+      justify-content: center;
+      font-size: 18px;
+      height: 40px;
+      padding-bottom: 5px;
+      background: rgb(110, 110, 110);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 1), inset 2px 2px 0  rgba(175, 175, 175, 1),inset 0px -5px 0  rgba(85, 85, 85, 1);
+      &:hover{
+        background: rgb(166, 166, 255);
+        color: rgba(255, 255, 0, 01);
+      }
+    }
+    &:last-child {
+      margin-top: 5px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+#singleSection {
+  display: none;
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100vh;
+  animation: bgLoad 10s forwards 2s;
+  & .boxSingle {
+    position: absolute;
+    .loading {
+      position: absolute;
+      left: 400px;
+      & p {
+        color: white;
+        font-size: 32px;
+        animation: transparent 1s forwards 2.8s;
+      }
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: -960px;
+      padding: 30px;
+      cursor: pointer;
+      &::after,
+      &::before {
+        position: absolute;
+        content: "";
+        width: 3px;
+        height: 50px;
+        background: red;
+        top: 0;
+      }
+      &::before {
+        transform: rotate(-45deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+    .componetsLoad {
+      position: relative;
+
+      & .generating {
+        position: absolute;
+        text-align: center;
+        width: 400px;
+        height: 25px;
+        font-size: 32px;
+        top: 230px;
+        left: 290px;
+        color: transparent;
+        animation: transparent2 2.5s 2.8s;
+
+        &::after {
+          width: 0px;
+          position: absolute;
+          height: 10px;
+          content: "";
+          left: 0;
+          bottom: -150px;
+          animation: loadBar 0.5s 5 2.9s;
+        }
+
+        &::before {
+          width: 400px;
+          position: absolute;
+          height: 10px;
+          content: "";
+          left: 0;
+          bottom: -80px;
+          animation: components 2.5s 2.8s;
+          color: white;
+          text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+}
+
+@keyframes bgLoad {
+  30%,
+  34% {
+    background: url(../assets/download.png);
+  }
+  37%,
+  100% {
+    background: url(../assets/bgF2.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+
+@keyframes components {
+  20% {
+    content: "Raising..";
+  }
+  40% {
+    content: "Eroding..";
+  }
+  60% {
+    content: "Soiling..";
+  }
+  80% {
+    content: "Carving..";
+  }
+  100% {
+    content: "Growing..";
+  }
+}
+
+@keyframes loadBar {
+  to {
+    width: 400px;
+    background: rgb(160, 250, 160);
+  }
+}
+
+@keyframes transparent {
+  0%,
+  100% {
+    color: transparent;
+  }
+}
+@keyframes transparent2 {
+  0%,
+  100% {
+    color: white;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.4);
+  }
+}
